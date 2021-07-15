@@ -1,0 +1,12 @@
+import pyfirmata
+#++++++++++++
+import time
+#------------
+board = pyfirmata.Arduino("/dev/cu.usbmodem143101")
+while True:
+    board.digital[8].write(1) # 1 = 5v
+    time.sleep(2)
+    board.digital[8].write(0) # 0 = 0v
+    time.sleep(2)
+
+    
